@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+  background: #eee;
+  height: auto;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1),
+  -30px 0px 40px rgba(0, 0, 0, 0.1);
+}
+
+#landing {
+  background: #fff;
+}
+
+#landing-text {
+  display: flex;
+  flex-flow: column; 
+  /* column so its wont inline all elements  */
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 40vw;
+  height: 50vh;
+  text-align: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+#landing-text h2 {
+  color: #888;
+}
+
+/* coming here after i finished .btn:hover */
+#landing-image {
+  background: url(https://source.unsplash.com/De8wMYoSSBc)no-repeat center / cover;
+  height: 50vh;
+  flex: 0 1 60vw;
+  /* 0 and 1 it's default for flex grow and flex shrink */
+  margin: 0;
+}
+/* goin down below .btn:hover styling the heasder */
+
+.btn {
+  display: inline-block;
+  /* inline-block so its wont run into element above */
+  padding: 0.5rem 2rem;
+  border: 1px #ccc solid;
+  border-radius: 50px;
+  margin: 2rem 0 0;
+  text-decoration: none;
+  color: #333;
+  transition: background 500ms ease;
+  /* transition for when i hover it's will chache color of background (.btn:hover) slowlier  */
+}
+
+.btn:hover {
+  background: #f4f4f4;
+}
+
+/* im going below #landing-text h2 to add picture for landing */
+
+#header {
+ padding: 1.5rem;
+ text-align: center;
+ background: #333;
+ color: #fff;
+}
+
+#header h2{
+  /* making a dotted border on each side */
+  border-left: dotted 1px #fff;
+  border-right: dotted 1px #fff;
+  /* to make border closer to text h2 have to  display as an inline-block*/
+  display: inline-block;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.caption {
+  padding: 0.8rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #333;
+}
+
+footer h3 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+/* finished with mobile version*/
+
+
+/* Now i want screen to split up and i need to display the landing div as a flexbox  */
+
+
+/* since this is mobile first we're going to set min-width of 500px;   */
+/* screen sizes 500px and up */
+@media (min-width: 500px){
+  /* whatever css we put in here it's only going to kick in if it's above 500px; if we said max width it would be anything under 500px*/
+  #landing {
+    display: flex;
+    height: 100%;
+    
+  }
+   /* now what we wanna to do is set the landing text and the landing image to 100vh vieport height*/
+   #landing-text {
+     height: 100vh;
+   }
+
+   #landing-image {
+     height: 100vh;
+   } 
+}
+
+/*on 700px (not 500) or higher i want button to be bigger */
+
+/* screen sizes 700px and up */
+@media (min-width: 700px){
+  .btn {
+    padding: 1rem 3rem;
+  }
+}
+/* Finished with  */
+/* now im going to main.js and add jquery to make when i press on the button to scrolling smooth*/
